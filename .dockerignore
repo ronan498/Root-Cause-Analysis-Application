@@ -1,0 +1,11 @@
+# Don’t send these into the build context
+.venv
+__pycache__
+*.pyc
+*.log
+.vscode
+.idea
+.git
+.gitignore
+.env
+data/indices

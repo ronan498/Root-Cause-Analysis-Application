@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  rca-api:
+    build: .
+    container_name: rca_demo
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DATA_DIR=/app/data
+      - EMBED_MODEL=text-embedding-3-small
+      - BACKEND_URL=http://localhost:8000
+    volumes:
+      - ./data:/app/data
