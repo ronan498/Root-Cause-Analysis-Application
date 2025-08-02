@@ -17,10 +17,10 @@ def _normalise(v: np.ndarray) -> np.ndarray:
     return v / denom
 
 class RCAIndex:
-    """In-memory FAISS (or numpy) index + metadata.
-    Cosine similarity via L2-normalised vectors and inner-product search.
-    Persists FAISS index and metadata (including vectors) to disk.
-    Thread-safe for add/search via a lock."""
+    """In-memory FAISS (or numpy) index + metadata with cosine similarity.
+    Stores vectors in meta so filtered search can always run, even without FAISS.
+    Thread-safe add/search via a lock.
+    """
 
     def __init__(self):
         self.lock = threading.Lock()
@@ -62,6 +62,9 @@ class RCAIndex:
             for i, r in enumerate(rows):
                 r2 = dict(r)
                 r2["embedding"] = vecs[i].tolist()
+                # Ensure optional keys exist
+                r2.setdefault("model", "")
+                r2.setdefault("component", "")
                 self.meta.append(r2)
         self.save()
 
@@ -78,17 +81,28 @@ class RCAIndex:
             for i, r in enumerate(rows):
                 r2 = dict(r)
                 r2["embedding"] = vecs[i].tolist()
+                r2.setdefault("model", "")
+                r2.setdefault("component", "")
                 self.meta.append(r2)
         self.save()
 
-    def search(self, query_vec: np.ndarray, top_k: int = 3, component: Optional[str] = None) -> List[Tuple[int, float]]:
+    def search(
+        self,
+        query_vec: np.ndarray,
+        top_k: int = 3,
+        component: Optional[str] = None,
+        model: Optional[str] = None,
+    ) -> List[Tuple[int, float]]:
+        """Return list of (meta_index, similarity) for the best matches."""
         q = _normalise(query_vec.astype("float32")).reshape(1, -1)
         with self.lock:
             ids = list(range(len(self.meta)))
             if component:
-                ids = [i for i, m in enumerate(self.meta) if m.get("component", "").lower() == component.lower()]
-                if not ids:
-                    return []
+                ids = [i for i in ids if (self.meta[i].get("component") or "").lower() == component.lower()]
+            if model:
+                ids = [i for i in ids if (self.meta[i].get("model") or "").lower() == model.lower()]
+            if not ids:
+                return []
             vecs = np.array([self.meta[i]["embedding"] for i in ids], dtype="float32")
             sims = (vecs @ q.T).ravel()
             order = np.argsort(-sims)[:top_k]

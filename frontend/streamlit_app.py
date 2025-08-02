@@ -10,7 +10,7 @@ MIN_SIMILARITY = 0.45  # only display results with similarity >= this value
 
 st.set_page_config(page_title="RCA Demo", layout="centered")
 
-# Hide Streamlit's "Press Ctrl+Enter to apply" hint under text inputs/areas
+# Hide Streamlit's "Press Ctrl+Enter to apply"
 st.markdown("""
 <style>
 [data-testid="stTextArea"] div[aria-live="polite"] { display: none !important; }
@@ -24,10 +24,10 @@ div[data-baseweb="input"] + div p { display: none !important; }
 if "hide_uploader" not in st.session_state:
     st.session_state.hide_uploader = False
 if "uploader_key" not in st.session_state:
-    st.session_state.uploader_key = 0  # used to force-clear the file_uploader selection
+    st.session_state.uploader_key = 0
 
 # -------------------- Header --------------------
-st.title("Root Cause Analysis Demo")
+st.title("Root Cause Analysis (RCA) Demo")
 st.caption("Describe a fault and get likely causes and recommended corrective actions.")
 
 # -------------------- Sidebar: settings + upload --------------------
@@ -41,12 +41,11 @@ with st.sidebar:
 
     if st.session_state.hide_uploader:
         st.success("Upload complete.")
-        # Small link to show the uploader again if needed
         if st.button("Add another file", use_container_width=True):
             st.session_state.hide_uploader = False
             st.experimental_rerun()
     else:
-        st.write("Upload a CSV with columns: **component**, **fault_description**, **root_cause**, **corrective_action**.")
+        st.write("Upload a CSV with columns: **component**, **fault_description**, **root_cause**, **corrective_action**; optional **model**.")
         up = st.file_uploader(
             "Upload CSV",
             type=["csv"],
@@ -54,7 +53,6 @@ with st.sidebar:
             help="This updates the knowledge base and the index."
         )
         add_clicked = st.button("Add to knowledge base", use_container_width=True)
-
         if up and add_clicked:
             files = {"file": (up.name, up.getvalue(), "text/csv")}
             try:
@@ -62,16 +60,15 @@ with st.sidebar:
                 if r.ok:
                     data = r.json()
                     st.success(f"Added {data.get('added', 0)} rows.")
-                    # Hide controls and clear selected file on next render
                     st.session_state.hide_uploader = True
-                    st.session_state.uploader_key += 1  # changing the key clears file_uploader
+                    st.session_state.uploader_key += 1
                     st.experimental_rerun()
                 else:
                     st.error(f"Upload failed: {r.status_code} {r.text}")
             except Exception as e:
                 st.error(f"Error: {e}")
 
-# -------------------- Fetch components for dropdown --------------------
+# -------------------- Helpers --------------------
 def fetch_components(api_base: str):
     try:
         resp = requests.get(f"{api_base}/components", timeout=10)
@@ -82,14 +79,32 @@ def fetch_components(api_base: str):
         pass
     return []
 
-components = fetch_components(backend_url)
+def fetch_models(api_base: str, component: str):
+    try:
+        resp = requests.get(f"{api_base}/models", params={"component": component}, timeout=10)
+        if resp.ok:
+            models = resp.json().get("models", [])
+            return sorted({str(m).strip().lower() for m in models if str(m).strip()})
+    except Exception:
+        pass
+    return []
 
 # -------------------- Inputs --------------------
-display_components = ["All"] + [c.title() for c in components]
-component_display = st.selectbox("Component (optional filter)", options=display_components, index=0)
+components = fetch_components(backend_url)
+component_display = st.selectbox("Component (optional filter)", options=["All"] + [c.title() for c in components], index=0)
+
+# Model dropdown appears only when a specific component is selected
+model_display = None
+models = []
+if component_display != "All":
+    selected_component = component_display.lower()
+    models = fetch_models(backend_url, selected_component)
+    model_options = ["All models"] + [m.title() for m in models] if models else ["All models"]
+    model_display = st.selectbox("Model (optional)", options=model_options, index=0)
+
 query = st.text_area(
     "Describe the fault",
-    placeholder="e.g. Motor making a high-pitched squeal and smells burnt…",
+    placeholder="e.g. Motor (ABB M3BP 160MLA 4) making a high-pitched squeal and smells burnt…",
     height=120,
 )
 
@@ -101,6 +116,8 @@ if st.button("Diagnose", type="primary"):
         payload = {"query": query, "top_k": MAX_RESULTS}
         if component_display != "All":
             payload["component"] = component_display.lower()
+            if model_display and model_display != "All models":
+                payload["model"] = model_display.lower()
 
         with st.spinner("Analysing…"):
             try:
@@ -111,7 +128,6 @@ if st.button("Diagnose", type="primary"):
 
         if r is not None:
             if r.ok:
-                # --- Filter to show 'up to' MAX_RESULTS based on similarity threshold ---
                 raw_results = r.json() or []
                 try:
                     filtered = [
@@ -119,18 +135,21 @@ if st.button("Diagnose", type="primary"):
                         if float(it.get("similarity", 0.0)) >= MIN_SIMILARITY
                     ]
                 except Exception:
-                    filtered = raw_results  # fallback if parsing similarity fails
+                    filtered = raw_results
 
                 n = len(filtered)
                 st.metric("Matches found", n)
 
                 if n == 0:
-                    st.info(
-                        "No strong matches found. Try rephrasing the description or remove the component filter."
-                    )
+                    st.info("No strong matches found. Try rephrasing or loosen the filters.")
                 else:
                     for i, item in enumerate(filtered, start=1):
-                        st.markdown(f"### {i}. {item.get('component','').title()}")
+                        title_bits = [
+                            (item.get('component') or '').title(),
+                            (item.get('model') or '').title()
+                        ]
+                        title = " – ".join([b for b in title_bits if b])
+                        st.markdown(f"### {i}. {title}")
                         st.markdown(f"**Matched fault:** {item.get('matched_fault_description','')}")
                         st.markdown(f"**Root cause:** {item.get('root_cause','')}")
                         st.markdown(f"**Corrective action:** {item.get('corrective_action','')}")
@@ -146,6 +165,5 @@ if st.button("Diagnose", type="primary"):
 with st.expander("About this demo", expanded=False):
     st.write(
         "This demo uses OpenAI embeddings for similarity search over fault descriptions, "
-        "FastAPI as the backend, and Streamlit for the UI. Upload new CSV rows to add components "
-        "and update the knowledge base."
+        "FastAPI as the backend, and Streamlit for the UI. You can optionally filter by component and model."
     )

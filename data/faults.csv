@@ -1,46 +1,80 @@
-component,fault_description,root_cause,corrective_action
-motor,High-pitched squeal on start-up and a faint burnt smell after a few minutes.,Bearing lubrication failure leading to overheating.,"Replace bearings, re-grease to OEM spec, and implement a lubrication schedule."
-motor,Motor hums loudly and trips the breaker as soon as it tries to turn.,Locked rotor due to misalignment or seized load.,"Decouple the load, verify the rotor spins freely, correct alignment and check for seized components."
-motor,Noticeable vibration after recent maintenance; vibration amplitude increases with speed.,Rotor imbalance or coupling misalignment.,Perform dynamic balancing and re-align the coupling to tolerance.
-motor,Running hot with reduced torque; terminals feel warm.,Single-phasing or voltage imbalance.,"Check supply fuses and phases, tighten terminals, correct feed imbalance."
-motor,Visible arcing at brushes and erratic speed (DC motor).,Worn brushes and contaminated commutator.,"Replace brushes, skim/clean commutator, verify brush spring tension."
-motor,Signs of moisture ingress; insulation resistance is low.,Water ingress degrading insulation.,"Dry the windings, perform IR/megger test, improve enclosure sealing/IP rating."
-motor,Single-phase motor struggles to start in cold weather; occasional buzzing.,Start/run capacitor degradation.,Test and replace the capacitor; verify correct capacitance rating.
-pump,Pump runs but there is no flow; discharge valve was partly closed.,Impeller blockage or valve position causing starvation.,"Open/verify valves, inspect/clear impeller and suction strainer."
-pump,Loud rattling and “gravel” sound; pressure fluctuates.,Low NPSH or air ingress on suction side causing cavitation.,"Check suction head, seal leaks on suction, re-prime and reduce suction lift."
-pump,Mechanical seal area is wet and dripping.,Seal face wear or damaged O-rings.,"Replace mechanical seal, verify alignment and flush plan as required."
-pump,Discharge pressure is lower than last month at same speed.,Impeller wear or excessive clearances.,Inspect/overhaul impeller and wear rings; restore clearances.
-pump,Trips on overload; strong burning smell; shaft hard to turn by hand.,Seized bearing or jammed impeller.,"Strip pump, replace bearings, clear debris and flush casing."
-pump,New vibration after pipework change; grows with flow.,Piping strain transmitted to casing; misalignment.,"Add/support pipe hangers, re-align pump and motor, grout base as needed."
-pump,Loses prime overnight; needs manual prime each morning.,Non-return/foot valve leaking back.,Inspect and replace the check/foot valve; verify seating and cleanliness.
-compressor,High discharge temperature and reduced efficiency.,Cooling failure due to fouled intercooler or fan issue.,"Clean/flush intercooler, check fan operation and thermostat."
-compressor,Oil visible in downstream air tools and receivers.,Saturated or failed oil separator element.,"Replace separator, verify oil level and differential pressure across element."
-compressor,Slow to build pressure; inlet sounds restricted.,Clogged intake air filter.,Replace/clean intake filter; inspect intake ducting.
-compressor,Unit trips on high vibration; mounts look worn.,Imbalance or loose mounting.,"Inspect/replace mounts, balance rotating parts, tighten fixings."
-compressor,Short cycling: frequent start/stop around setpoint.,Incorrect pressure switch deadband or system leak.,Adjust pressure switch deadband; leak-test and repair fittings.
-compressor,Water in air line and tools.,Dryer/aftercooler malfunction or drain failure.,"Service/repair dryer, check condensate drains and receiver purge."
-compressor,Loud metallic knocking from head; output drops.,Damaged valve plate or reeds.,Inspect and replace valve plate/reeds; check for debris and re-torque.
-motor,Motor runs with intermittent jerks and an occasional clunking noise.,Loose coupling or worn keyway.,"Inspect coupling and keyway, tighten or replace as necessary."
-motor,Strong ozone smell and sparks visible from casing vents.,Breakdown of winding insulation causing arcing.,"Take motor out of service, test windings with megger, rewind or replace stator."
-motor,Motor speed fluctuates without changes to load; amp readings unstable.,Variable frequency drive (VFD) fault or power quality issue.,"Check VFD output, inspect for harmonics or supply instability, reset/replace VFD if required."
-motor,Motor will not start; only a faint click heard from contactor.,Contactor or starter coil failure.,Test and replace contactor or starter coil.
-motor,"After rain, the motor fails insulation resistance test.",Condensation inside terminal box.,"Dry out terminal, check for leaks, use anti-condensation heaters if needed."
-motor,Operator reports excessive motor noise after fitting new fan.,Incorrect fan blade installation causing imbalance.,"Check fan blade orientation and balance, correct and re-test."
-pump,"Pump makes high-pitched whine, flow rate drops suddenly.",Air pocket trapped in casing (air lock).,"Vent casing, bleed system, check for suction leaks."
-pump,Pulsing pressure gauge; vibration at specific speeds only.,Pump resonance or baseplate not grouted.,"Secure baseplate, check for resonance, add vibration damping."
-pump,Suction pressure lower than usual despite open valve.,Partially clogged suction line or filter.,Inspect and clear suction piping and filter basket.
-pump,Unusual blue smoke seen at pump gland area.,Packing overheating from over-tightening.,"Loosen packing gland, replace packing if damaged, check lubrication."
-pump,"Pump stops after running for 30 minutes, feels excessively hot.",Insufficient cooling or dry running.,"Check cooling system, ensure fluid is present, prevent dry run conditions."
-pump,Pump vibrates more after moving to a new base.,Pump and driver not aligned post-move.,Re-align pump and driver to manufacturer’s tolerances.
-compressor,Excessive moisture collects in the aftercooler.,Aftercooler drain blockage.,"Clean or replace drain, check float operation."
-compressor,Pressure drops steadily during operation; hissing sound near manifold.,Air leak from manifold or discharge piping.,"Use leak detection spray, repair or replace leaking sections."
-compressor,Unit vibrates only at start and shutdown.,Soft foot or mounting bolt looseness.,"Check and tighten all mounting bolts, shim to eliminate soft foot."
-compressor,Oil level drops quickly; oily residue around crankcase.,Crankcase gasket failure or excessive blow-by.,"Replace gasket, inspect piston rings for blow-by."
-compressor,High current draw but no output pressure.,Broken drive belt or coupling slip.,"Inspect drive belt/coupling, tighten or replace as necessary."
-compressor,Periodic loud bang from compressor; trips on overload.,Hydraulic lock due to liquid slugging.,"Check for liquid in suction line, install suction accumulator if needed."
-motor,Motor runs fine but trips thermal overload on hot days.,Cooling fan blocked or ambient temperature too high.,"Clean cooling fan, improve ventilation, check for external heat sources."
-motor,Shaft shows visible scoring after seal replacement.,Incorrect seal installation or misalignment during assembly.,"Inspect shaft and seal, correct installation procedure, replace damaged parts."
-pump,Operator hears 'knocking' noise when pump starts and stops.,Pipework water hammer due to rapid valve operation.,"Fit anti-hammer device, train operators to open/close valves slowly."
-pump,Pressure gauge oscillates violently when system flow is low.,Incorrectly sized or faulty pulsation dampener.,Install correct pulsation dampener or service existing one.
-compressor,"Temperature gauge spikes during extended use, but recovers when unit idles.",Intermittent cooling fan fault.,"Test fan for intermittent operation, replace faulty wiring or fan motor."
-compressor,"Output air smells burnt, especially after extended runs.",Overheated oil due to insufficient lubrication or wrong oil type.,"Change oil, use manufacturer-specified lubricant, check lubrication schedule."
+component,fault_description,root_cause,corrective_action,model
+motor,High-pitched squeal on start-up and a faint burnt smell after a few minutes.,Bearing lubrication failure leading to overheating.,"Replace bearings, re-grease to OEM spec, and implement a lubrication schedule.",
+motor,Motor hums loudly and trips the breaker as soon as it tries to turn.,Locked rotor due to misalignment or seized load.,"Decouple the load, verify the rotor spins freely, correct alignment and check for seized components.",
+motor,Noticeable vibration after recent maintenance; vibration amplitude increases with speed.,Rotor imbalance or coupling misalignment.,Perform dynamic balancing and re-align the coupling to tolerance.,
+motor,Running hot with reduced torque; terminals feel warm.,Single-phasing or voltage imbalance.,"Check supply fuses and phases, tighten terminals, correct feed imbalance.",
+motor,Visible arcing at brushes and erratic speed (DC motor).,Worn brushes and contaminated commutator.,"Replace brushes, skim/clean commutator, verify brush spring tension.",
+motor,Signs of moisture ingress; insulation resistance is low.,Water ingress degrading insulation.,"Dry the windings, perform IR/megger test, improve enclosure sealing/IP rating.",
+motor,Single-phase motor struggles to start in cold weather; occasional buzzing.,Start/run capacitor degradation.,Test and replace the capacitor; verify correct capacitance rating.,
+pump,Pump runs but there is no flow; discharge valve was partly closed.,Impeller blockage or valve position causing starvation.,"Open/verify valves, inspect/clear impeller and suction strainer.",
+pump,Loud rattling and “gravel” sound; pressure fluctuates.,Low NPSH or air ingress on suction side causing cavitation.,"Check suction head, seal leaks on suction, re-prime and reduce suction lift.",
+pump,Mechanical seal area is wet and dripping.,Seal face wear or damaged O-rings.,"Replace mechanical seal, verify alignment and flush plan as required.",
+pump,Discharge pressure is lower than last month at same speed.,Impeller wear or excessive clearances.,Inspect/overhaul impeller and wear rings; restore clearances.,
+pump,Trips on overload; strong burning smell; shaft hard to turn by hand.,Seized bearing or jammed impeller.,"Strip pump, replace bearings, clear debris and flush casing.",
+pump,New vibration after pipework change; grows with flow.,Piping strain transmitted to casing; misalignment.,"Add/support pipe hangers, re-align pump and motor, grout base as needed.",
+pump,Loses prime overnight; needs manual prime each morning.,Non-return/foot valve leaking back.,Inspect and replace the check/foot valve; verify seating and cleanliness.,
+compressor,High discharge temperature and reduced efficiency.,Cooling failure due to fouled intercooler or fan issue.,"Clean/flush intercooler, check fan operation and thermostat.",
+compressor,Oil visible in downstream air tools and receivers.,Saturated or failed oil separator element.,"Replace separator, verify oil level and differential pressure across element.",
+compressor,Slow to build pressure; inlet sounds restricted.,Clogged intake air filter.,Replace/clean intake filter; inspect intake ducting.,
+compressor,Unit trips on high vibration; mounts look worn.,Imbalance or loose mounting.,"Inspect/replace mounts, balance rotating parts, tighten fixings.",
+compressor,Short cycling: frequent start/stop around setpoint.,Incorrect pressure switch deadband or system leak.,Adjust pressure switch deadband; leak-test and repair fittings.,
+compressor,Water in air line and tools.,Dryer/aftercooler malfunction or drain failure.,"Service/repair dryer, check condensate drains and receiver purge.",
+compressor,Loud metallic knocking from head; output drops.,Damaged valve plate or reeds.,Inspect and replace valve plate/reeds; check for debris and re-torque.,
+motor,Motor runs with intermittent jerks and an occasional clunking noise.,Loose coupling or worn keyway.,"Inspect coupling and keyway, tighten or replace as necessary.",
+motor,Strong ozone smell and sparks visible from casing vents.,Breakdown of winding insulation causing arcing.,"Take motor out of service, test windings with megger, rewind or replace stator.",
+motor,Motor speed fluctuates without changes to load; amp readings unstable.,Variable frequency drive (VFD) fault or power quality issue.,"Check VFD output, inspect for harmonics or supply instability, reset/replace VFD if required.",
+motor,Motor will not start; only a faint click heard from contactor.,Contactor or starter coil failure.,Test and replace contactor or starter coil.,
+motor,"After rain, the motor fails insulation resistance test.",Condensation inside terminal box.,"Dry out terminal, check for leaks, use anti-condensation heaters if needed.",
+motor,Operator reports excessive motor noise after fitting new fan.,Incorrect fan blade installation causing imbalance.,"Check fan blade orientation and balance, correct and re-test.",
+pump,"Pump makes high-pitched whine, flow rate drops suddenly.",Air pocket trapped in casing (air lock).,"Vent casing, bleed system, check for suction leaks.",
+pump,Pulsing pressure gauge; vibration at specific speeds only.,Pump resonance or baseplate not grouted.,"Secure baseplate, check for resonance, add vibration damping.",
+pump,Suction pressure lower than usual despite open valve.,Partially clogged suction line or filter.,Inspect and clear suction piping and filter basket.,
+pump,Unusual blue smoke seen at pump gland area.,Packing overheating from over-tightening.,"Loosen packing gland, replace packing if damaged, check lubrication.",
+pump,"Pump stops after running for 30 minutes, feels excessively hot.",Insufficient cooling or dry running.,"Check cooling system, ensure fluid is present, prevent dry run conditions.",
+pump,Pump vibrates more after moving to a new base.,Pump and driver not aligned post-move.,Re-align pump and driver to manufacturer’s tolerances.,
+compressor,Excessive moisture collects in the aftercooler.,Aftercooler drain blockage.,"Clean or replace drain, check float operation.",
+compressor,Pressure drops steadily during operation; hissing sound near manifold.,Air leak from manifold or discharge piping.,"Use leak detection spray, repair or replace leaking sections.",
+compressor,Unit vibrates only at start and shutdown.,Soft foot or mounting bolt looseness.,"Check and tighten all mounting bolts, shim to eliminate soft foot.",
+compressor,Oil level drops quickly; oily residue around crankcase.,Crankcase gasket failure or excessive blow-by.,"Replace gasket, inspect piston rings for blow-by.",
+compressor,High current draw but no output pressure.,Broken drive belt or coupling slip.,"Inspect drive belt/coupling, tighten or replace as necessary.",
+compressor,Periodic loud bang from compressor; trips on overload.,Hydraulic lock due to liquid slugging.,"Check for liquid in suction line, install suction accumulator if needed.",
+motor,Motor runs fine but trips thermal overload on hot days.,Cooling fan blocked or ambient temperature too high.,"Clean cooling fan, improve ventilation, check for external heat sources.",
+motor,Shaft shows visible scoring after seal replacement.,Incorrect seal installation or misalignment during assembly.,"Inspect shaft and seal, correct installation procedure, replace damaged parts.",
+pump,Operator hears 'knocking' noise when pump starts and stops.,Pipework water hammer due to rapid valve operation.,"Fit anti-hammer device, train operators to open/close valves slowly.",
+pump,Pressure gauge oscillates violently when system flow is low.,Incorrectly sized or faulty pulsation dampener.,Install correct pulsation dampener or service existing one.,
+compressor,"Temperature gauge spikes during extended use, but recovers when unit idles.",Intermittent cooling fan fault.,"Test fan for intermittent operation, replace faulty wiring or fan motor.",
+compressor,"Output air smells burnt, especially after extended runs.",Overheated oil due to insufficient lubrication or wrong oil type.,"Change oil, use manufacturer-specified lubricant, check lubrication schedule.",
+motor,High-pitched squeal on start-up; faint burnt odour after a few minutes.,Bearing lubrication failure leading to overheating.,"Replace bearings, re‑grease to OEM spec, and implement a lubrication schedule.",ABB M3BP 160MLA 4
+motor,Motor hums and trips the breaker on attempt to start.,Locked rotor due to misalignment or seized load.,"Decouple load, verify free rotation, correct alignment, check for seized components.",Siemens 1LE1 132M 4
+motor,Noticeable vibration after coupling change; amplitude rises with speed.,Rotor imbalance or coupling misalignment.,Dynamic balance rotor and re‑align coupling to tolerance.,WEG W22 55kW 4P
+motor,Running unusually hot; terminals warm to the touch.,Single‑phasing or voltage imbalance.,"Inspect fuses and phases, tighten terminals, correct supply imbalance.",Brook Crompton W Cast Iron 90L 2P
+motor,"Visible arcing at brushes, erratic speed (DC retrofit drive).",Worn brushes and contaminated commutator.,"Replace brushes, skim/clean commutator, verify brush spring tension.",Baldor M3613T 11kW 4P
+motor,Insulation resistance low after washdown; evidence of moisture.,Water ingress degrading insulation.,"Dry windings (oven/space heaters), IR/PI test, improve enclosure sealing/IP rating.",TECO AEHV 200L 4P
+motor,Struggles to start in cold weather; intermittent buzzing.,Start/run capacitor degradation (for capacitor‑start).,Test/replace capacitor with correct rating; verify starter circuit.,Siemens 1LE1 160M 2P
+motor,Periodic thump once per revolution at low speed.,Flat‑spotted bearing or looseness in foot bolts.,"Replace bearings, check soft‑foot, re‑torque base fixings.",WEG W22 30kW 6P
+motor,Audible 50 Hz hum; one phase current elevated; discoloured lugs.,High‑resistance connection at terminals.,"Isolate, clean and tighten terminals; replace damaged lugs; verify phase balance.",ABB M3BP 180MLA 4
+motor,Shaft too hot to touch; mild scraping noise on rundown.,Internal fan rubbing or endshield misalignment.,"Re‑seat endshield, check clearances, replace internal fan if damaged.",Brook Crompton EFF2 112M 4P
+motor,Frequent overload trips during high ambient temps.,Cooling path obstructed or undersized fan cover.,"Clean cooling passages, confirm fan type, consider TEFC guard upgrade.",TECO AEHV 225S 4P
+motor,Vibration spike post-maintenance; keyway chatter marks seen.,Loose coupling key or fretting corrosion.,"Replace key, apply anti‑fretting compound, correct interference fit.",Siemens 1LE1 200L 4
+pump,Pump runs but no flow; discharge valve partly closed earlier.,Impeller blockage or suction starvation.,Open/verify valves; inspect/clear impeller and suction strainer.,Grundfos CR15‑5
+pump,Loud rattling “gravel” sound; pressure fluctuates.,Cavitation from low NPSH or air ingress on suction.,"Check static head, seal suction leaks, re‑prime, reduce suction lift.",KSB Etanorm 125‑250
+pump,Mechanical seal area wet and dripping.,Seal face wear or damaged O‑rings.,Replace mechanical seal; verify alignment; set flush plan.,Sulzer AHLSTAR A43‑125
+pump,Discharge pressure lower than last month at same speed.,Impeller wear or excessive clearances.,Inspect/overhaul impeller and wear rings; restore clearances.,Flowserve Mark 3 2×3‑8
+pump,Trips on overload; burning smell; shaft stiff by hand.,Seized bearing or jammed impeller.,"Strip pump, replace bearings, clear debris, flush casing.",Goulds 3196 MT
+pump,New vibration after pipework modification; increases with flow.,Piping strain transmitted to casing; misalignment.,Add/support pipe hangers; re‑align pump/motor; grout base.,Ebara EVMS 10
+pump,Loses prime overnight; requires manual prime in morning.,Leaking foot/check valve.,Inspect/replace check valve; verify seating and cleanliness.,Grundfos CRN 32‑3
+pump,High bearing temperature after seal replacement.,Misaligned shaft or over‑tightened gland.,Re‑align shaft; check seal installation; reset gland compression.,KSB Etabloc 65‑160
+pump,Vibration at vane‑pass frequency; reduced efficiency.,Impeller fouling or partial blockage.,Clean volute/impeller; install suction strainer alarm.,Sulzer SNS 100‑200
+pump,Erratic discharge pressure; intermittent air bubbles.,Suction vortex/entrainment from low submergence.,"Increase submergence, add anti‑vortex plate, slow suction velocity.",Flowserve Durco Mark 3 3×4‑13
+pump,Stuffing box runs dry and hot.,Inadequate flush or blocked lantern ring.,Restore flush plan; clean lantern ring; consider mechanical seal retrofit.,Goulds 3196 STi
+pump,Noisy operation; resonance near 2900 rpm.,Baseplate not grouted; soft‑foot present.,Grout base; correct soft‑foot; perform bump test to confirm shift.,Ebara EVMS 20
+compressor,High discharge temperature; efficiency down.,Fouled intercooler or failed cooling fan.,Clean/flush intercooler; verify fan and thermostat operation.,Atlas Copco GA30+
+compressor,Oil visible in downstream tools and receivers.,Saturated/failed oil separator element.,Replace separator; verify oil level and ∆P across element.,Ingersoll Rand R45n
+compressor,Short cycling around setpoint.,Incorrect pressure switch deadband or system leak.,Adjust deadband; leak‑test and repair fittings.,CompAir L37
+compressor,Water in airline and tools.,Dryer/aftercooler malfunction or drain failure.,Service dryer; check condensate drains; receiver purge.,Sullair LS‑20
+compressor,Knocking from head; output drops.,Damaged valve plate or reeds.,Inspect/replace valve plate/reeds; remove debris and re‑torque.,Atlas Copco GA37
+compressor,High oil carryover after service; ∆P across separator low.,Incorrect separator element or damaged seals.,Install correct element; replace seals; verify crankcase venting.,Ingersoll Rand RS90
+compressor,Flow pulsation; discharge pressure oscillates ±0.3 bar.,Faulty inlet modulation valve control.,Calibrate/replace modulation valve; check control loop tuning.,Kaeser ASD 37
+compressor,Excess current draw at start; weak acceleration.,Star/delta timing error or stuck contactor.,Verify starter timing; inspect/replace contactors.,Gardner Denver VS 45
+compressor,High gearbox temperature warning.,Low oil level or cooler bypass stuck.,Top up with OEM oil; service cooler/bypass; check for leaks.,CompAir L45RS
+compressor,Audible hiss near intercooler; efficiency drop.,Intercooler leak to atmosphere.,Pressure test intercooler; repair/replace core; retorque clamps.,Sullair ES‑8
