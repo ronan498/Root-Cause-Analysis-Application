@@ -1,10 +1,7 @@
-# RCA Demo (FastAPI + Streamlit + OpenAI Embeddings)
 # Root Cause Analysis Demo
 
-Similarity-based root cause analysis for motors, pumps, and compressors. Supports live uploads to add new components.
-Similarity-based root cause analysis for motors, pumps, and compressors. The backend is built with FastAPI and OpenAI embeddings, and the frontend uses Streamlit.
+Similarity-based root cause analysis for engineering components. The backend is built with FastAPI and OpenAI embeddings, and the frontend uses Streamlit.
 
-## Quickstart
 ## Features
 - Describe a fault and receive likely root causes and corrective actions ranked by similarity
 - Filter by component and model
@@ -36,7 +33,6 @@ uvicorn app.backend.main:app --reload --port 8000
 streamlit run frontend/streamlit_app.py
 ```
 
-## Run with Docker
 Once running:
 - API docs: http://127.0.0.1:8000/docs
 - Streamlit UI: http://127.0.0.1:8501
@@ -52,8 +48,6 @@ python -m app.ingest.build_index --rebuild  # rebuild from scratch
 ## Run with Docker
 1. Copy `.env.example` to `.env` and set `OPENAI_API_KEY`.
 2. Build and run:
-   ```bash
-   docker compose up --build
 
 ```bash
 docker compose up --build
