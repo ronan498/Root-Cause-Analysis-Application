@@ -44,37 +44,74 @@ pump,Operator hears 'knocking' noise when pump starts and stops.,Pipework water 
 pump,Pressure gauge oscillates violently when system flow is low.,Incorrectly sized or faulty pulsation dampener.,Install correct pulsation dampener or service existing one.,
 compressor,"Temperature gauge spikes during extended use, but recovers when unit idles.",Intermittent cooling fan fault.,"Test fan for intermittent operation, replace faulty wiring or fan motor.",
 compressor,"Output air smells burnt, especially after extended runs.",Overheated oil due to insufficient lubrication or wrong oil type.,"Change oil, use manufacturer-specified lubricant, check lubrication schedule.",
-motor,High-pitched squeal on start-up; faint burnt odour after a few minutes.,Bearing lubrication failure leading to overheating.,"Replace bearings, re‑grease to OEM spec, and implement a lubrication schedule.",ABB M3BP 160MLA 4
+motor,High-pitched squeal on start-up; faint burnt odour after a few minutes.,Bearing lubrication failure leading to overheating.,"Replace bearings, re-grease to OEM spec, and implement a lubrication schedule.",ABB M3BP 160MLA 4
 motor,Motor hums and trips the breaker on attempt to start.,Locked rotor due to misalignment or seized load.,"Decouple load, verify free rotation, correct alignment, check for seized components.",Siemens 1LE1 132M 4
-motor,Noticeable vibration after coupling change; amplitude rises with speed.,Rotor imbalance or coupling misalignment.,Dynamic balance rotor and re‑align coupling to tolerance.,WEG W22 55kW 4P
-motor,Running unusually hot; terminals warm to the touch.,Single‑phasing or voltage imbalance.,"Inspect fuses and phases, tighten terminals, correct supply imbalance.",Brook Crompton W Cast Iron 90L 2P
+motor,Noticeable vibration after coupling change; amplitude rises with speed.,Rotor imbalance or coupling misalignment.,Dynamic balance rotor and re-align coupling to tolerance.,WEG W22 55kW 4P
+motor,Running unusually hot; terminals warm to the touch.,Single-phasing or voltage imbalance.,"Inspect fuses and phases, tighten terminals, correct supply imbalance.",Brook Crompton W Cast Iron 90L 2P
 motor,"Visible arcing at brushes, erratic speed (DC retrofit drive).",Worn brushes and contaminated commutator.,"Replace brushes, skim/clean commutator, verify brush spring tension.",Baldor M3613T 11kW 4P
 motor,Insulation resistance low after washdown; evidence of moisture.,Water ingress degrading insulation.,"Dry windings (oven/space heaters), IR/PI test, improve enclosure sealing/IP rating.",TECO AEHV 200L 4P
-motor,Struggles to start in cold weather; intermittent buzzing.,Start/run capacitor degradation (for capacitor‑start).,Test/replace capacitor with correct rating; verify starter circuit.,Siemens 1LE1 160M 2P
-motor,Periodic thump once per revolution at low speed.,Flat‑spotted bearing or looseness in foot bolts.,"Replace bearings, check soft‑foot, re‑torque base fixings.",WEG W22 30kW 6P
-motor,Audible 50 Hz hum; one phase current elevated; discoloured lugs.,High‑resistance connection at terminals.,"Isolate, clean and tighten terminals; replace damaged lugs; verify phase balance.",ABB M3BP 180MLA 4
-motor,Shaft too hot to touch; mild scraping noise on rundown.,Internal fan rubbing or endshield misalignment.,"Re‑seat endshield, check clearances, replace internal fan if damaged.",Brook Crompton EFF2 112M 4P
+motor,Struggles to start in cold weather; intermittent buzzing.,Start/run capacitor degradation (for capacitor-start).,Test/replace capacitor with correct rating; verify starter circuit.,Siemens 1LE1 160M 2P
+motor,Periodic thump once per revolution at low speed.,Flat-spotted bearing or looseness in foot bolts.,"Replace bearings, check soft-foot, re-torque base fixings.",WEG W22 30kW 6P
+motor,Audible 50 Hz hum; one phase current elevated; discoloured lugs.,High-resistance connection at terminals.,"Isolate, clean and tighten terminals; replace damaged lugs; verify phase balance.",ABB M3BP 180MLA 4
+motor,Shaft too hot to touch; mild scraping noise on rundown.,Internal fan rubbing or endshield misalignment.,"Re-seat endshield, check clearances, replace internal fan if damaged.",Brook Crompton EFF2 112M 4P
 motor,Frequent overload trips during high ambient temps.,Cooling path obstructed or undersized fan cover.,"Clean cooling passages, confirm fan type, consider TEFC guard upgrade.",TECO AEHV 225S 4P
-motor,Vibration spike post-maintenance; keyway chatter marks seen.,Loose coupling key or fretting corrosion.,"Replace key, apply anti‑fretting compound, correct interference fit.",Siemens 1LE1 200L 4
-pump,Pump runs but no flow; discharge valve partly closed earlier.,Impeller blockage or suction starvation.,Open/verify valves; inspect/clear impeller and suction strainer.,Grundfos CR15‑5
-pump,Loud rattling “gravel” sound; pressure fluctuates.,Cavitation from low NPSH or air ingress on suction.,"Check static head, seal suction leaks, re‑prime, reduce suction lift.",KSB Etanorm 125‑250
-pump,Mechanical seal area wet and dripping.,Seal face wear or damaged O‑rings.,Replace mechanical seal; verify alignment; set flush plan.,Sulzer AHLSTAR A43‑125
-pump,Discharge pressure lower than last month at same speed.,Impeller wear or excessive clearances.,Inspect/overhaul impeller and wear rings; restore clearances.,Flowserve Mark 3 2×3‑8
+motor,Vibration spike post-maintenance; keyway chatter marks seen.,Loose coupling key or fretting corrosion.,"Replace key, apply anti-fretting compound, correct interference fit.",Siemens 1LE1 200L 4
+pump,Pump runs but no flow; discharge valve partly closed earlier.,Impeller blockage or suction starvation.,Open/verify valves; inspect/clear impeller and suction strainer.,Grundfos CR15-5
+pump,Loud rattling “gravel” sound; pressure fluctuates.,Cavitation from low NPSH or air ingress on suction.,"Check static head, seal suction leaks, re-prime, reduce suction lift.",KSB Etanorm 125-250
+pump,Mechanical seal area wet and dripping.,Seal face wear or damaged O-rings.,Replace mechanical seal; verify alignment; set flush plan.,Sulzer AHLSTAR A43-125
+pump,Discharge pressure lower than last month at same speed.,Impeller wear or excessive clearances.,Inspect/overhaul impeller and wear rings; restore clearances.,Flowserve Mark 3 2x3-8
 pump,Trips on overload; burning smell; shaft stiff by hand.,Seized bearing or jammed impeller.,"Strip pump, replace bearings, clear debris, flush casing.",Goulds 3196 MT
-pump,New vibration after pipework modification; increases with flow.,Piping strain transmitted to casing; misalignment.,Add/support pipe hangers; re‑align pump/motor; grout base.,Ebara EVMS 10
-pump,Loses prime overnight; requires manual prime in morning.,Leaking foot/check valve.,Inspect/replace check valve; verify seating and cleanliness.,Grundfos CRN 32‑3
-pump,High bearing temperature after seal replacement.,Misaligned shaft or over‑tightened gland.,Re‑align shaft; check seal installation; reset gland compression.,KSB Etabloc 65‑160
-pump,Vibration at vane‑pass frequency; reduced efficiency.,Impeller fouling or partial blockage.,Clean volute/impeller; install suction strainer alarm.,Sulzer SNS 100‑200
-pump,Erratic discharge pressure; intermittent air bubbles.,Suction vortex/entrainment from low submergence.,"Increase submergence, add anti‑vortex plate, slow suction velocity.",Flowserve Durco Mark 3 3×4‑13
+pump,New vibration after pipework modification; increases with flow.,Piping strain transmitted to casing; misalignment.,Add/support pipe hangers; re-align pump/motor; grout base.,Ebara EVMS 10
+pump,Loses prime overnight; requires manual prime in morning.,Leaking foot/check valve.,Inspect/replace check valve; verify seating and cleanliness.,Grundfos CRN 32-3
+pump,High bearing temperature after seal replacement.,Misaligned shaft or over-tightened gland.,Re-align shaft; check seal installation; reset gland compression.,KSB Etabloc 65-160
+pump,Vibration at vane-pass frequency; reduced efficiency.,Impeller fouling or partial blockage.,Clean volute/impeller; install suction strainer alarm.,Sulzer SNS 100200
+pump,Erratic discharge pressure; intermittent air bubbles.,Suction vortex/entrainment from low submergence.,"Increase submergence, add anti-vortex plate, slow suction velocity.",Flowserve Durco Mark 3 3x4-13
 pump,Stuffing box runs dry and hot.,Inadequate flush or blocked lantern ring.,Restore flush plan; clean lantern ring; consider mechanical seal retrofit.,Goulds 3196 STi
-pump,Noisy operation; resonance near 2900 rpm.,Baseplate not grouted; soft‑foot present.,Grout base; correct soft‑foot; perform bump test to confirm shift.,Ebara EVMS 20
+pump,Noisy operation; resonance near 2900 rpm.,Baseplate not grouted; soft-foot present.,Grout base; correct soft-foot; perform bump test to confirm shift.,Ebara EVMS 20
 compressor,High discharge temperature; efficiency down.,Fouled intercooler or failed cooling fan.,Clean/flush intercooler; verify fan and thermostat operation.,Atlas Copco GA30+
 compressor,Oil visible in downstream tools and receivers.,Saturated/failed oil separator element.,Replace separator; verify oil level and ∆P across element.,Ingersoll Rand R45n
-compressor,Short cycling around setpoint.,Incorrect pressure switch deadband or system leak.,Adjust deadband; leak‑test and repair fittings.,CompAir L37
-compressor,Water in airline and tools.,Dryer/aftercooler malfunction or drain failure.,Service dryer; check condensate drains; receiver purge.,Sullair LS‑20
-compressor,Knocking from head; output drops.,Damaged valve plate or reeds.,Inspect/replace valve plate/reeds; remove debris and re‑torque.,Atlas Copco GA37
+compressor,Short cycling around setpoint.,Incorrect pressure switch deadband or system leak.,Adjust deadband; leak-test and repair fittings.,CompAir L37
+compressor,Water in airline and tools.,Dryer/aftercooler malfunction or drain failure.,Service dryer; check condensate drains; receiver purge.,Sullair LS-20
+compressor,Knocking from head; output drops.,Damaged valve plate or reeds.,Inspect/replace valve plate/reeds; remove debris and re-torque.,Atlas Copco GA37
 compressor,High oil carryover after service; ∆P across separator low.,Incorrect separator element or damaged seals.,Install correct element; replace seals; verify crankcase venting.,Ingersoll Rand RS90
 compressor,Flow pulsation; discharge pressure oscillates ±0.3 bar.,Faulty inlet modulation valve control.,Calibrate/replace modulation valve; check control loop tuning.,Kaeser ASD 37
 compressor,Excess current draw at start; weak acceleration.,Star/delta timing error or stuck contactor.,Verify starter timing; inspect/replace contactors.,Gardner Denver VS 45
 compressor,High gearbox temperature warning.,Low oil level or cooler bypass stuck.,Top up with OEM oil; service cooler/bypass; check for leaks.,CompAir L45RS
-compressor,Audible hiss near intercooler; efficiency drop.,Intercooler leak to atmosphere.,Pressure test intercooler; repair/replace core; retorque clamps.,Sullair ES‑8
+compressor,Audible hiss near intercooler; efficiency drop.,Intercooler leak to atmosphere.,Pressure test intercooler; repair/replace core; retorque clamps.,Sullair ES-8
+
+motor,Sudden increase in bearing temperature; grease appears dark and watery.,Grease contamination and emulsification from water ingress.,"Purge and replace grease, fit improved seals; add labyrinth/deflectors and review washdown practices.",ABB M3BP 160MLA 4
+motor,Intermittent shaft grounding detected by shaft voltage probe; pitting on bearings.,Stray shaft current from VFD without proper grounding/filters.,"Install shaft grounding ring, insulated bearings at non-drive end, and fit dv/dt filter on VFD.",Siemens 1LE1 132M 4
+motor,Cooling fan guard clogged with lint; frame too hot at full load.,Restricted cooling airflow causing thermal overload.,"Clean fan/guard, implement routine cleaning; consider finer intake screen and temperature monitoring.",WEG W22 55kW 4P
+motor,Endshield bolts found loose after vibration survey; axial play observed.,Endshield loosening leading to rotor axial movement.,"Remove, inspect dowels, apply threadlocker and torque to spec; recheck end float.",Brook Crompton W Cast Iron 90L 2P
+motor,Brush sparking increases under load; commutator shows uneven patina.,Incorrect brush grade or seating after replacement.,"Fit correct brush grade, bed in brushes, check spring pressure and neutral plane.",Baldor M3613T 11kW 4P
+motor,Frequent nuisance trips on earth leakage during damp mornings.,Surface tracking due to condensation on terminal board.,"Improve enclosure IP, add anti-condensation heaters; clean/varnish terminal board.",TECO AEHV 200L 4P
+motor,Audible rattle at start; start capacitor previously replaced with aftermarket part.,Underrated replacement capacitor causing poor starting torque.,Replace with OEM-rated capacitor; verify microfarad value and voltage rating.,Siemens 1LE1 160M 2P
+motor,Foot soft-foot detected: shim stack > 0.6 mm under one foot; high vertical vibration.,Baseplate distortion leading to soft-foot condition.,"Correct soft-foot with precision shims, regrout if needed; align to coupling tolerance.",WEG W22 30kW 6P
+motor,Grease purging from drive-end seal; over-grease noted in history.,Over-lubrication causing churning and seal failure.,"Remove excess grease, replace seals, set correct regrease interval/quantity per OEM.",ABB M3BP 180MLA 4
+motor,Motor trips on thermal overload after filter change in MCC room.,Reduced room airflow raising ambient temperature beyond design.,"Restore HVAC flow, clean return filters; derate or relocate motor if ambient remains high.",Brook Crompton EFF2 112M 4P
+motor,Unstable speed on VFD at low Hz; hunting around setpoint.,Poor VFD autotune or incorrect motor nameplate parameters.,"Run full autotune, enter exact nameplate data; enable vector control and adjust PID gains.",TECO AEHV 225S 4P
+motor,Shaft key fretted; brown dust around coupling hub.,Micro-movement due to insufficient interference fit.,"Replace hub and key, apply anti-fretting compound; ensure correct fit and torque key clamp.",Siemens 1LE1 200L 4
+pump,Suction pressure unstable after cleaning strainer; occasional air in sight glass.,Minor suction leak at gasket allowing air ingress.,"Pressure-test suction, replace gasket and re-torque; ensure proper gasket type.",Grundfos CR15-5
+pump,Bearing housing shows milky oil; seal water found connected to housing vent.,Water contamination of bearing oil via incorrect piping.,"Correct piping, drain and flush housing; refill with correct oil and monitor moisture.",KSB Etanorm 125-250
+pump,Seal flush plan flow low; temperature rising at seal chamber.,Blocked flush line or plugged orifice in Plan 11.,"Clean/replace orifice, verify differential pressure and restore flush flow.",Sulzer AHLSTAR A43-125
+pump,Pump vibrates at 1x RPM after impeller trim; BE radial high.,Balance lost after impeller machining.,Dynamically balance assembly; verify trim concentricity and key seating.,Flowserve Mark 3 2x3-8
+pump,Frequent cavitation noise near minimum flow; recirculation suspected.,Operation far left of pump curve causing internal recirculation.,"Open minimum-flow bypass, adjust control to keep within allowable operating range.",Goulds 3196 MT
+pump,Pump loses prime after 30 minutes idle; foot valve tested OK.,Air pocket forming at high point on suction line.,Add automatic air release valve at high point; re-route piping to eliminate pocket.,Ebara EVMS 10
+pump,Discharge pressure oscillates in sync with upstream process valve.,Control interaction / poor tuning of upstream valve.,Tune valve controller; add dampening or accumulator; decouple control loops.,Grundfos CRN 32-3
+pump,Shaft sleeve wear excessive; packing gland leaking continuously.,Packing too tight causing sleeve wear and heat.,"Replace sleeve, install new packing with correct lantern ring position; set leakage appropriately.",KSB Etabloc 65-160
+pump,Flow reduced after maintenance; wear ring clearance measured above spec.,Excessive wear ring clearance reducing efficiency.,Replace wear rings to spec; verify impeller-to-casing concentricity.,Sulzer SNS 100-200
+pump,Vibration at vane-pass frequency; suction strainer differential rising.,Partial blockage at strainer causing uneven inlet flow.,Clean/replace strainer; implement differential alarm and maintenance interval.,Flowserve Durco Mark 3 3x4-13
+pump,Stuffing box temperature high with steam present; flush line cold.,No flush reaching packing due to closed isolation/plug.,Open/clear flush; confirm flow rate; consider conversion to mechanical seal.,Goulds 3196 STi
+pump,Motor load spikes when discharge valve rapidly throttled.,Hydraulic instability due to sudden system changes.,Implement slower valve ramp; add bypass to stabilise flow during transients.,Ebara EVMS 20
+compressor,Aftercooler outlet above dew point; water appearing in line.,Aftercooler fouled or cooling water flow inadequate.,"Clean aftercooler, restore cooling flow; verify temperature approach.",Atlas Copco GA30+
+compressor,Separator DP high alarm within weeks after service.,Incorrect oil grade or overfilled oil causing carryover.,"Drain to correct level, refill with OEM grade; monitor DP trend.",Ingersoll Rand R45n
+compressor,Inlet valve sluggish; machine hunts between load/unload.,Sticky inlet valve due to varnish and contamination.,Clean or replace inlet valve; check control air quality; add coalescer filter.,Kaeser SK 26
+compressor,High vibration at 2x running speed; misalignment suspected.,Angular misalignment of motor-compressor coupling.,Perform laser alignment; verify soft-foot and base flatness.,Gardner Denver ESM 30
+compressor,Pressure slowly decays during unload; relief heard intermittently.,Check valve leaking back to inlet side.,Inspect/replace check valve; verify seating and spring condition.,CompAir L37
+compressor,Receiver drains constantly; excessive condensate generation.,Failed dryer or zero air loss drain stuck open.,Service dryer; repair/replace drain; set proper drain cycle.,Sullair LS-20
+compressor,Head temperature spikes during peak load; fan cycling abnormal.,Thermostat/fan control fault causing reduced cooling.,Test/replace thermostat; ensure fan runs continuously at high load.,Atlas Copco GA37
+compressor,Excessive belt dust; belts chirp on start.,Belt misalignment or incorrect tension.,"Align sheaves, set correct belt tension; replace worn belts.",Ingersoll Rand RS90
+compressor,PLC reports frequent starts per hour beyond spec.,Too-narrow pressure band or undersized receiver volume.,Widen pressure band; add receiver capacity; review leak rate.,Kaeser ASD 37
+compressor,Audible leak at manifold; soap test shows pinholes at weld.,Manifold corrosion causing pinhole leaks.,Repair or replace manifold; apply corrosion protection and drain management.,Gardner Denver VS 45
+compressor,Gearbox oil appears foamy; sight glass milky.,Air entrainment from agitation or water ingress.,Check oil level and demulsifying properties; drain and refill; improve breather.,CompAir L45RS
+compressor,Intermittent high vibration coinciding with filter change interval.,Loose filter canister or collapsed filter element.,Retorque canister; replace element; add DP monitoring on filter.,Sullair ES-8

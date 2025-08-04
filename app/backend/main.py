@@ -10,6 +10,8 @@ from app.rca.search import QueryEngine
 from app.rca.schemas import DiagnoseRequest, DiagnoseResponseItem, ComponentsResponse, ModelsResponse
 from app.rca.config import CSV_PATH
 from app.rca.utils import unique_components
+from fastapi import Body
+from app.rca.llm_narrow import propose_question, apply_answer
 
 app = FastAPI(title="RCA Demo API", version="0.2.0")
 
@@ -128,3 +130,36 @@ async def ingest(file: UploadFile = File(...)):
         df["model"] = ""
     else:
         df["model"] = df["model"].fillna("").astype(str)
+
+@app.post("/narrow/next")
+def narrow_next(
+    query: str = Body(...),
+    candidates: list[dict] = Body(..., description="Top matches from /diagnose (as returned)"),
+    asked: list[dict] = Body(default=[], description="History: [{'question': str, 'keywords': [..]}]"),
+):
+    # Build ban lists from what’s already been asked
+    banned_keywords = []
+    banned_questions = []
+    for a in asked or []:
+        q = (a.get("question") or "").strip()
+        if q:
+            banned_questions.append(q)
+        for k in a.get("keywords") or []:
+            k = (str(k) or "").strip().lower()
+            if k:
+                banned_keywords.append(k)
+
+    q = propose_question(query, candidates[:5], banned_keywords=banned_keywords, banned_questions=banned_questions)
+    if not q.get("question"):
+        return {"question": None, "keywords": [], "rationale": "unavailable"}
+    return q
+
+
+@app.post("/narrow/answer")
+def narrow_answer(
+    answer: bool = Body(..., description="True for Yes, False for No"),
+    keywords: list[str] = Body(...),
+    candidates: list[dict] = Body(...),
+):
+    re_ranked = apply_answer(answer, keywords, candidates)
+    return {"candidates": re_ranked}
